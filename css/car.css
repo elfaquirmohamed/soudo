@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+
+.credit-section a {
+    color: #faee5a;
+    cursor: pointer;
+}
+
+
+.heading h1 {
+    font-size: 60px;
+    color: #555555;
+    margin-left: 20px;
+}
+
+.main-section {
+    height: 300px;
+    background: #68cdaf;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#scene {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.rope-line {
+    top: auto !important;
+    bottom: 140px;
+    height: 85px;
+    left: -50px !important;
+    right: -50px;
+    z-index: 2;
+}
+
+
+.buildings-bg {
+    top: auto !important;
+    bottom: 145px;
+    z-index: 1;
+    height: 255px;
+    left: -50px !important;
+    right: -50px;
+}
+
+.buildings-bg > .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: url("https://res.cloudinary.com/dyquku6bs/image/upload/v1537333316/buildings-background_rxiq0u.png") 0% 0% repeat-x;
+    animation: move-bg 1000s linear reverse;
+    background-size: 3000px;
+}
+.bus-wrap {
+    position: absolute;
+    bottom: 15px;
+    top: auto !important;
+    z-index: 3;
+    left: auto !important;
+    right: 80px;
+    width: 400px;
+}
+
+.bus-wrap > .inner {
+    position: relative;
+    animation: bus-bounce 0.75s linear infinite;
+}
+
+.bus-wrap svg {
+    width: 100%;
+}
+
+.bus-wrap .tyres-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.bus-wrap .tyres-wrapper .tyres-content:nth-child(1) {
+    position: absolute;
+    bottom: 36px;
+    left: 80px;
+}
+
+.bus-wrap .tyres-wrapper .tyres-content:nth-child(2) {
+    position: absolute;
+    bottom: 36px;
+    right: 105px;
+}
+
+.bus-wrap .tyres {
+    position: relative;
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    background: #f4f4f4;
+    border-radius: 50%;
+    border: 8px solid #333;
+}
+
+.bus-wrap .rim-section {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background: #f3f3f3;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+}
+
+.bus-wrap .rim-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px dashed #4e5066;
+    border-radius: 50%;
+    animation: rim-dot 2s linear infinite;
+}
+
+.road-wrap {
+    height: 150px;
+    background: #4a4953;
+    position: absolute;
+    top: auto !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.road-wrap .bar {
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 39px 9px;
+    background-repeat: repeat-x;
+    height: 4px;
+    left: 0;
+    width: 100%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.road-wrap .bar:before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0) 0%);
+    background-size: 39px 9px;
+    height: 4px;
+    left: -101%;
+    display: block;
+    width: 100%;
+}
+
+.road-wrap:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 10px;
+    border-top: 5px solid #e6db69;
+}
+
+/* KEYFRAMES */
+
+
+@keyframes wire-move {
+    0% {
+        margin-bottom: 0;
+    }
+    100% {
+        margin-bottom: -30px;
+    }
+}
+
+/* ANIMATIONS */
+
+#background-wrap {
+    opacity: 0.7;
+}
+
+
+.slide-right {
+    animation: slide-right 30s linear infinite both;
+}
+
+.slide-right-img {
+    animation: slide-right-img 100s linear infinite;
+}
+
+.slide-right-buildings {
+    animation: slide-right-buildings 115s linear infinite;
+}
+
+.slide-right-rope {
+    animation: slide-right-rope 90s linear infinite;
+}
+
+
+
+@keyframes rim-dot {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(-180deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes move-bg {
+    to {
+        background-position-x: 5000%;
+    }
+}
